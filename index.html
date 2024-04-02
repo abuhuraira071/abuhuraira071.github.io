@@ -1,19 +1,331 @@
 <!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Testing</title>
-    <h1 class="centre"> This is the first thing </h1>
+    <title>Tech Hub</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            color: #333;
+            height: 100%;
+            /* Remove overflow: hidden; to allow scrolling */
+        }
+
+        .container {
+            position: relative;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 0px;
+            box-sizing: border-box;
+            overflow: hidden; /* Hide overflow to prevent scrollbars */
+            min-height: 100%;
+        }
+
+.site-header {
+    background-color: #007BFF;
+    color: inline-block;
+    padding: 20px 0; /* Keep the padding as you want */
+    display: flex;
+    align-items: center;
+}
+
+.site-header {
+    background-color: #007BFF;
+    color: white;
+    padding: 20px 0; /* Keep the padding as you want */
+    display: flex;
+    align-items: center;
+}
+
+.site-header h1 {
+    margin: 0;
+    font-size: 40px;
+    flex-grow: 1; /* Make the h1 element fill the available space */
+    display: flex;
+    align-items: center; /* Center the line vertically */
+}
+
+
+.site-header p {
+    font-size: 18px;
+    margin-top: 10px; 
+}
+ 
+
+        .site-navigation {
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #FFF;
+            padding: 10px 0;
+            text-align: center;
+            position: relative; /* Ensure relative positioning */
+            z-index: 999; /* Make sure it's on top of other elements */
+        }
+
+        .site-navigation ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .site-navigation ul li {
+            display: inline-block;
+            margin: 0 10px;
+        }
+
+        .site-navigation ul li a {
+            text-decoration: none;
+            color: #FFF;
+            font-weight: bold;
+            transition: background-color 0.3s, box-shadow 0.3s;
+            padding: 10px 20px;
+            border-radius: 5px;
+            background-color: #28A745; /* Set button background color */
+            display: inline-block; /* Display buttons side by side */
+        }
+
+        .site-navigation ul li:nth-child(2) a {
+            background-color: #007BFF; /* Change background color of About */
+        }
+
+        .site-navigation ul li:nth-child(3) a {
+            background-color: #FFC107; /* Change background color of Services */
+        }
+
+        .site-navigation ul li:nth-child(4) a {
+            background-color: #E91E63; /* Change background color of Contact */
+        }
+
+        .site-navigation ul li:nth-child(5) a {
+            background-color: #9C27B0; /* Change background color of IP Info */
+            animation: highlight 1s infinite; /* Apply animation */
+        }
+
+        .site-navigation ul li:nth-child(6) a {
+            background-color: #FF5722; /* Change background color of Nagad Info */
+            animation: highlight 1s infinite; /* Apply animation */
+        }
+
+        .site-navigation ul li a:hover {
+            background-color: #218838; /* Darken the background on hover */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow */
+        }
+
+        @keyframes highlight {
+            0% { background-color: #9C27B0; }
+            50% { background-color: #FF5722; }
+            100% { background-color: #9C27B0; }
+        }
+
+        .site-main {
+            position: relative;
+            padding: 50px 0;
+        }
+
+        .hero {
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+
+        .learn-more {
+            padding: 10px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            color: white;
+            background-color: #007BFF;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.5s, box-shadow 0.3s;
+        }
+
+        .learn-more:hover {
+            background-color: #0056b3;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .site-footer {
+            background-color: #007BFF;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+
+        .site-footer p {
+            margin: 10px 0;
+        }
+
+        /* Animated background */
+  body:before {
+    content: "";
+    position: fixed;
+    top: calc(100px + 10vh); /* Adjust the distance from the top */
+    left: 0;
+    width: 100%;
+    height: calc(100% - 150px - 0vh); /* Adjust the distance from the top */
+    /* background: url('zunayed.jpg'); Replace 'mondol.jpg' with your image */
+    background-size: cover;
+    z-index: -1;
+    animation: backgroundAnimation 10s linear infinite; 
+}
+
+
+
+        @keyframes backgroundAnimation {
+            from { background-position: 0 0; }
+            to { background-position: 100% 0; }
+        }  
+        .explore {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: black; /* Starting color */ 
+  animation: rainbow 1s linear infinite; /* Animation */
+}
+
+@keyframes rainbow {
+  0% {
+    color: black; /* Starting color */
+    transform: scale(1);
+  }
+  25% {
+    color: black; /* Color transition */
+    transform: scale(1.1);
+  }
+  50% {
+    color: #33ff8d; /* Color transition */
+    transform: scale(1.2);
+  }
+  75% {
+    color: #337eff; /* Color transition */
+    transform: scale(1.1);
+  }
+  100% {
+    color: black; /* Ending color */
+    transform: scale(1);
+  }
+
+        @keyframes backgroundAnimation {
+            0% { background-position: 0 0; }
+            100% { background-position: 100% 0; }
+        }
+        body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+.explore {
+    transform: scale(10); /* Adjust the scale factor as needed */
+}
+
+
+.welcome {
+  display: grid;
+  place-items: center;
+  height: 100vh;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .welcome {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+    align-items: center;
+     background-size: cover;
+  }
+  body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+.site-header,
+.site-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+}
+.site-header h1 {
+    margin: 0;
+    font-size: 40px;
+    margin-right: 50px; /* Add some space before the text */
+    display : flex;
+}
+ 
+
+.site-navigation ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.site-navigation ul li {
+  margin-right: 20px;
+}
+
+.site-navigation ul li:last-child {
+  margin-right: 0;
+}
+
+.site-navigation ul li a {
+  text-decoration: none;
+  color: #333;
+}
+</style>
 </head>
 <body>
+    <div class="container">
+        <header class="site-header">
+            <h1 class="welcome">Welcome to Tech Hub</h1>
+        </header>
 
-    <h1 id="s"> Operate Via Java Script </h1>
+        <nav class="site-navigation">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="https://t.me/abuhuraira071">Contact</a></li>
+                <li><a href="updated.php">IP Info</a></li>
+                <li><a href="asd.php">Nagad Info</a></li>
+            </ul>
+        </nav>
+
+        <main class="site-main">
+            <section class="hero">
+                
+            <!-- <h2 class ="explore">Explore the Latest in Technology</h2>
+                <p><b>Stay updated with the newest trends and information in the tech world.<b></p> -->
+                <!-- <button class="learn-more">Learn More</button> -->
+              
+                
+            </section>
+        </main>
+    </div>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>Developed By: Abu Huraira Mridha</p>
+            <p>&copy; 2024 Tech Info Hub. All rights reserved.</p>
+        </div>
+    </footer>
 
    
-    <button id="mode"> Change Mode </button>
-
-
-  
 </body>
-
 </html>
+
